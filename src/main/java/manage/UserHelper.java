@@ -16,9 +16,7 @@ public class UserHelper extends HelperBase {
         click(By.cssSelector("#login"));
         pause(2000);
         type(By.cssSelector("#password"), password);
-
     }
-
     public void submitLogin() {
         click(By.cssSelector("#login-submit"));
     }
@@ -32,9 +30,7 @@ public class UserHelper extends HelperBase {
         click(By.cssSelector("[data-testid='header-member-menu-logout']"));
         click(By.cssSelector("#logout-submit"));
 
-
     }
-
     public void login(String email, String password) {
         click(By.cssSelector("[href='/login']"));
         type(By.cssSelector("#user"), email);

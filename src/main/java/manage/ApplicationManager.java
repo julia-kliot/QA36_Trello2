@@ -9,6 +9,7 @@ public class ApplicationManager {
     WebDriver wd;
 
     UserHelper user;
+    BoardHelper board;
 
     public void init(){
         wd = new ChromeDriver();
@@ -17,6 +18,7 @@ public class ApplicationManager {
         wd.navigate().to("https://trello.com/");
 
         user= new UserHelper(wd);
+        board= new BoardHelper(wd);
         user.login("juliakliot.jk@gmail.com","misha240613");
 
     }
@@ -28,5 +30,9 @@ public class ApplicationManager {
 
     public UserHelper getUser() {
         return user;
+    }
+
+    public BoardHelper getBoard() {
+        return board;
     }
 }
