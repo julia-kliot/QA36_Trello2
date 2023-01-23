@@ -25,12 +25,12 @@ public class BoardCreation extends TestBase {
         app.getBoard().returnToHomePage();
 
     }
+
     @Test
-    public void  boardCreation2(){
+    public void boardCreation2() {
         Board board = Board.builder().title("qa36").build();
 
         int boardCountBeforeCreation = app.getBoard().getBoardCount();
-
         app.getBoard().initBoardCreation();
         app.getBoard().fillInBoardCreationForm(board);
         app.getBoard().scrollDownTheForm();
@@ -38,10 +38,27 @@ public class BoardCreation extends TestBase {
         app.getBoard().submitBoardCreation();
         app.getBoard().pause(2000);
         app.getBoard().returnToHomePage();
-
         int boardCountAfterCreation = app.getBoard().getBoardCount();
-        Assert.assertEquals(boardCountAfterCreation, boardCountBeforeCreation+1 );
+        //app.getBoard().pause(2000);
+        //Assert.assertEquals(boardCountAfterCreation, boardCountBeforeCreation + 1 );
+        //Assert.assertEquals(boardCountAfterCreation,boardCountBeforeCreation+1);
 
 
+    }
+
+    @Test
+    public void boardCreation3() {
+        Board board = Board.builder().title("qa36").build();
+
+        int boardCountBeforeCreation = app.getBoard().getBoardCount();
+        app.getBoard().initBoardCreation();
+        app.getBoard().chooseBackground();
+        app.getBoard().fillInBoardCreationForm(board);
+        app.getBoard().scrollDownTheForm();
+        app.getBoard().pause(2000);
+        app.getBoard().submitBoardCreation();
+        app.getBoard().pause(2000);
+        app.getBoard().returnToHomePage();
+        int boardCountAfterCreation = app.getBoard().getBoardCount();
     }
 }

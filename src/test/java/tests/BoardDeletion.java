@@ -7,15 +7,16 @@ public class BoardDeletion extends TestBase{
 
     @Test
     public void boardDeletion1(){
-        // int boardCountBeforeDeletion = app.getBoard().getBoardCount();
+        int boardCountBeforeDeletion = app.getBoard().getBoardCount();
         app.getBoard().clickOnTheFirstBoard();
+        app.getBoard().pause(2000);
         app.getBoard().openSideMenu();
         app.getBoard().openMore();
         app.getBoard().closeBoard();
         app.getBoard().deleteBoard();
 
-        //int boardCountAfterDeletion = app.getBoard().getBoardCount();
-       // Assert.assertEquals(boardCountAfterDeletion,boardCountBeforeDeletion-1);
+        int boardCountAfterDeletion = app.getBoard().getBoardCount();
+      // Assert.assertEquals(boardCountAfterDeletion,boardCountBeforeDeletion-1);
 
     }
 }
