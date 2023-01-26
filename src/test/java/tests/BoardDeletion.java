@@ -7,6 +7,7 @@ public class BoardDeletion extends TestBase{
 
     @Test
     public void boardDeletion1(){
+
         int boardCountBeforeDeletion = app.getBoard().getBoardCount();
         app.getBoard().clickOnTheFirstBoard();
         app.getBoard().pause(2000);

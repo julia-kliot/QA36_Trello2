@@ -10,6 +10,7 @@ public class BoardCreation extends TestBase {
     public void boardCreation1() {
 
         Board board = Board.builder().title("qa36").build();
+        logger.info("Test board creation 1--"+board.getTitle());
 
         app.getBoard().initBoardCreation();
         app.getBoard().fillInBoardCreationForm(board);
@@ -18,6 +19,7 @@ public class BoardCreation extends TestBase {
         app.getBoard().submitBoardCreation();
         app.getBoard().pause(2000);
         app.getBoard().isCreated();
+        logger.info("Board is created--");
 
         Assert.assertTrue(app.getBoard().isCreated());
 

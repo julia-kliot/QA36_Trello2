@@ -4,6 +4,9 @@ import model.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserHelper extends HelperBase {
     public UserHelper(WebDriver wd) {
         super(wd);
@@ -45,5 +48,19 @@ public class UserHelper extends HelperBase {
         pause(2000);
         type(By.cssSelector("#password"), password);
         click(By.cssSelector("#login-submit"));
+    }
+
+    public void clickOnAvatar() {
+        click(By.cssSelector("[data-testid='header-member-menu-button']"));
+    }
+
+    public void openUserProfile() {
+        click(By.cssSelector("[data-testid='account-menu-profile']"));
+    }
+
+    public void goToTheAtlassianAccount() {
+        click(By.cssSelector("[href$='manage-profile']"));
+        List<String>tabs = new ArrayList<>(wd.getWindowHandles());
+        wd.switchTo().window((tabs.get(tabs.size()-1)));
     }
 }
